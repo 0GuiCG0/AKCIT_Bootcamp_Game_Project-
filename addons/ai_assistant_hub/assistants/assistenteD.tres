@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="AIAssistantResource" format=3 uid="uid://lc6rcrv73kwy"]
+
+[ext_resource type="Script" uid="uid://bukqnag83g6t4" path="res://addons/ai_assistant_hub/quick_prompts/ai_quick_prompt_resource.gd" id="1_b150w"]
+[ext_resource type="Script" uid="uid://chs138kjsv7gm" path="res://addons/ai_assistant_hub/assistants/ai_assistant_resource.gd" id="2_qve3c"]
+
+[resource]
+script = ExtResource("2_qve3c")
+type_name = "Ajudante"
+metadata/_custom_type_script = "uid://chs138kjsv7gm"

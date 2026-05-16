@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://2856n2quv82k"]
+
+[ext_resource type="Texture2D" uid="uid://egvhfbrevch1" path="res://Assets/Merchant/Marchant.png" id="1_5u005"]
+
+[sub_resource type="Animation" id="Animation_5u005"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_rp4tw"]
+resource_name = "idle"
+length = 1.8
+loop_mode = 1
+step = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s08t2"]
+_data = {
+&"RESET": SubResource("Animation_5u005"),
+&"idle": SubResource("Animation_rp4tw")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5u005"]
+radius = 16.03122
+
+[node name="Merchant" type="Area2D" unique_id=894567308]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1878083982]
+texture_filter = 1
+position = Vector2(0, -7)
+texture = ExtResource("1_5u005")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=566811218]
+libraries/ = SubResource("AnimationLibrary_s08t2")
+autoplay = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=646949153]
+shape = SubResource("CircleShape2D_5u005")

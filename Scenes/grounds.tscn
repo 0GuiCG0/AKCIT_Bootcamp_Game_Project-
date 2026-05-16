@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cd13okvxnkr7d"]
+
+[ext_resource type="PackedScene" uid="uid://b2k5ej226qitc" path="res://Scenes/player.tscn" id="1_wrkgt"]
+[ext_resource type="PackedScene" uid="uid://scg2d137jcve" path="res://Scenes/criter.tscn" id="2_25di4"]
+[ext_resource type="PackedScene" uid="uid://2856n2quv82k" path="res://Scenes/merchant.tscn" id="3_x2nof"]
+
+[node name="Grounds" type="Node2D" unique_id=1754007016]
+
+[node name="Player" parent="." unique_id=478587308 instance=ExtResource("1_wrkgt")]
+
+[node name="Criter" parent="." unique_id=2111911699 instance=ExtResource("2_25di4")]
+position = Vector2(48, 52)
+
+[node name="Merchant" parent="." unique_id=556128914 instance=ExtResource("3_x2nof")]
+position = Vector2(48, -1)
