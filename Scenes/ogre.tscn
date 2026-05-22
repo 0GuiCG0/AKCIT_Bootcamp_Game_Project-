@@ -111,9 +111,6 @@ _data = {
 &"walking": SubResource("Animation_3ffo0")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_26lne"]
-size = Vector2(54, 23)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u2ms1"]
 size = Vector2(28.5, 22.5)
 
@@ -122,32 +119,18 @@ texture_filter = 1
 script = ExtResource("1_21mmg")
 speed = 90.0
 rotation_speed = 2.0
+attack_range = 52.0
+walk_anim_angle = 0.05
+walk_anim_bounce = 2.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1677461995]
 root_node = NodePath("../Sprite2D")
 libraries/ = SubResource("AnimationLibrary_u2ms1")
 autoplay = &"idle"
 
-[node name="FOV" type="Area2D" parent="." unique_id=2094441972]
-z_index = 2
-y_sort_enabled = true
-texture_filter = 1
-priority = 1
-script = ExtResource("2_u2ms1")
-
-[node name="vision_shape" type="CollisionPolygon2D" parent="FOV" unique_id=96059249]
-position = Vector2(130, 0)
-rotation = -3.1415927
-scale = Vector2(1.3, 0.9)
-polygon = PackedVector2Array(100, 0, 120, -79, 170, -67, 196, -41, 220, 0, 196, 41, 170, 67, 120, 79)
-
-[node name="Body" type="StaticBody2D" parent="." unique_id=247075518]
-position = Vector2(-2, -8.5)
-
-[node name="Collision" type="CollisionShape2D" parent="Body" unique_id=1790884138]
-shape = SubResource("RectangleShape2D_26lne")
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=901819850]
+z_index = 1
+y_sort_enabled = true
 texture_filter = 1
 position = Vector2(0, -38)
 scale = Vector2(0.5, 0.5)
@@ -157,8 +140,16 @@ hframes = 4
 vframes = 4
 frame = 3
 
-[node name="Timer" type="Timer" parent="." unique_id=1262732157]
-autostart = true
+[node name="FOV" type="Area2D" parent="." unique_id=2094441972]
+texture_filter = 1
+priority = 1
+script = ExtResource("2_u2ms1")
+
+[node name="vision_shape" type="CollisionPolygon2D" parent="FOV" unique_id=96059249]
+position = Vector2(130, 0)
+rotation = -3.1415927
+scale = Vector2(1.3, 0.9)
+polygon = PackedVector2Array(100, 0, 120, -79, 170, -67, 196, -41, 220, 0, 196, 41, 170, 67, 120, 79)
 
 [node name="AreaAttack" type="CollisionShape2D" parent="." unique_id=1520899273]
 position = Vector2(-25, -32)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c2oqqjbfbvu6l" path="res://Scripts/main.gd" id="1_2mvgh"]
 [ext_resource type="PackedScene" uid="uid://b2k5ej226qitc" path="res://Scenes/player.tscn" id="2_mtwjw"]
-[ext_resource type="PackedScene" uid="uid://scg2d137jcve" path="res://Scenes/criter.tscn" id="3_8c9hs"]
+[ext_resource type="PackedScene" uid="uid://scg2d137jcve" path="res://Scenes/ogre.tscn" id="3_8c9hs"]
 [ext_resource type="Texture2D" uid="uid://bdhddoaxku3g4" path="res://Assets/BG/florest_no-floor.png" id="4_8z3tf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjvhh"]

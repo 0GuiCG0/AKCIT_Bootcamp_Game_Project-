@@ -637,6 +637,7 @@ transitions = ["Idle", "Run", SubResource("AnimationNodeStateMachineTransition_u
 graph_offset = Vector2(-237.73174, -108.408806)
 
 [node name="Player" type="CharacterBody2D" unique_id=755526093 groups=["player"]]
+z_index = 1
 scale = Vector2(3, 3)
 wall_min_slide_angle = 0.0
 script = ExtResource("1_6t5aa")

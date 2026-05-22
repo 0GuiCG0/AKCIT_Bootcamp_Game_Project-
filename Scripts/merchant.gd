@@ -20,4 +20,4 @@ func _input(event):
 	if event.is_action_pressed("interact") and player_in_range:
 		dialog_box.visible = !dialog_box.visible
 		if dialog_box.visible:
-			dialog_box.get_node("dialogo").text = "Welcome! Want to buy goods?"
+			dialog_box.get_node("dialogo").text = "Hehe! Quer compra umas tralha?"
