@@ -3,5 +3,6 @@
 ## []:
 
 ## Por:
-Guilherme Caetano Gêa Martins; 
-Vinicius
+### Guilherme Caetano Gêa Martins
+### Vinicius
+### Ronan
