@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b6dg1c748e8te"]
+
+[ext_resource type="Texture2D" uid="uid://bdhddoaxku3g4" path="res://Assets/BG/florest_no-floor.png" id="1_cmdbi"]
+
+[node name="CaminhoPedras" type="Node2D" unique_id=1998921004]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=387730495]
+texture_filter = 1
+position = Vector2(24, 67)
+texture = ExtResource("1_cmdbi")
+region_enabled = true
+region_rect = Rect2(389, 283, 33, 30)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1619404219]
+texture_filter = 1
+position = Vector2(-22, 18)
+texture = ExtResource("1_cmdbi")
+region_enabled = true
+region_rect = Rect2(600, 245, 34, 36)
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=974105051]
+texture_filter = 1
+position = Vector2(-29, 96)
+texture = ExtResource("1_cmdbi")
+region_enabled = true
+region_rect = Rect2(422, 281, 37, 34)

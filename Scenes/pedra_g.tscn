@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://coqwvmwrs1r7j"]
+
+[ext_resource type="Texture2D" uid="uid://bdhddoaxku3g4" path="res://Assets/BG/florest_no-floor.png" id="1_lche1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7duj5"]
+size = Vector2(66, 47)
+
+[node name="PedraG" type="StaticBody2D" unique_id=88316094]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=28372153]
+position = Vector2(-1, 16.5)
+shape = SubResource("RectangleShape2D_7duj5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1270805015]
+texture_filter = 1
+texture = ExtResource("1_lche1")
+region_enabled = true
+region_rect = Rect2(529, 189, 72, 99)

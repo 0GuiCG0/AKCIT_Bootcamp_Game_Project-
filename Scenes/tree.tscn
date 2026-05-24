@@ -8,14 +8,12 @@ size = Vector2(38, 23)
 [node name="Tree" type="StaticBody2D" unique_id=862949754]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=63041401]
-position = Vector2(-4, 19.75)
+position = Vector2(-3, 29)
 shape = SubResource("RectangleShape2D_0vwjc")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=707749300]
-z_index = 1
-y_sort_enabled = true
 texture_filter = 1
-position = Vector2(0, -16)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_0vwjc")
 region_enabled = true
 region_rect = Rect2(176, 2, 88, 104)

@@ -1,8 +1,8 @@
-# AKCIT_Bootcamp_Game_Project - [SEM NOME]
+# AKCITBootcamp - Doomed Village
 
-## []:
+## Doomed Village:
 
-## Por:
-### Guilherme Caetano Gêa Martins
+## Criadores:
+### Guilherme C. G. Martins
 ### Vinicius
 ### Ronan

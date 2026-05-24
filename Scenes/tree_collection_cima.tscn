@@ -9,33 +9,29 @@ b = Vector2(-150, 0)
 [node name="TreeCollection" type="StaticBody2D" unique_id=2081901363]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1226417966]
-position = Vector2(29, 31)
+position = Vector2(0, 100)
 shape = SubResource("SegmentShape2D_70ewi")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=1548013695]
-position = Vector2(29, -89)
+position = Vector2(0, -34)
 shape = SubResource("SegmentShape2D_70ewi")
 
 [node name="Tree" type="Sprite2D" parent="." unique_id=1189071607]
-z_index = 1
 texture_filter = 1
-position = Vector2(-97, -36)
+position = Vector2(-111, -2)
 texture = ExtResource("1_4nddc")
 region_enabled = true
 region_rect = Rect2(266, 9, 84, 98)
 
 [node name="Tree2" type="Sprite2D" parent="." unique_id=715435453]
-z_index = 1
 texture_filter = 1
-position = Vector2(147, -52)
+position = Vector2(123, 9)
 texture = ExtResource("1_4nddc")
 region_enabled = true
 region_rect = Rect2(178, 0, 90, 108)
 
 [node name="Tree1" type="Sprite2D" parent="." unique_id=992259187]
-z_index = 1
 texture_filter = 1
-position = Vector2(16, -66)
 texture = ExtResource("1_4nddc")
 region_enabled = true
 region_rect = Rect2(0, 0, 176, 192)

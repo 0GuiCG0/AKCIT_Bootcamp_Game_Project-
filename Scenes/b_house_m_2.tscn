@@ -3,19 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://dlq7m4sfngk5n" path="res://Assets/Houses/pixel-snapper-Photoroom.png" id="1_7tqyi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3gry"]
-size = Vector2(56, 34)
+size = Vector2(56, 35)
 
 [node name="BHouse_m2" type="StaticBody2D" unique_id=870225176]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=141154635]
-position = Vector2(0, -12)
+position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_o3gry")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1703703182]
-z_index = 1
-y_sort_enabled = true
 texture_filter = 1
-position = Vector2(0, -23)
 texture = ExtResource("1_7tqyi")
 region_enabled = true
 region_rect = Rect2(11, 3, 61, 64)

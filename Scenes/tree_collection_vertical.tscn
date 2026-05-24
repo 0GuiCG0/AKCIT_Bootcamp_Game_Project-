@@ -17,7 +17,6 @@ position = Vector2(37, -33)
 shape = SubResource("SegmentShape2D_70ewi")
 
 [node name="Tree2" type="Sprite2D" parent="." unique_id=715435453]
-z_index = 1
 texture_filter = 1
 position = Vector2(-3, -171)
 texture = ExtResource("1_2w1yk")
@@ -25,7 +24,6 @@ region_enabled = true
 region_rect = Rect2(178, 0, 90, 108)
 
 [node name="Tree1" type="Sprite2D" parent="." unique_id=992259187]
-z_index = 1
 texture_filter = 1
 position = Vector2(16, -66)
 texture = ExtResource("1_2w1yk")
@@ -33,7 +31,6 @@ region_enabled = true
 region_rect = Rect2(0, 0, 176, 192)
 
 [node name="Tree" type="Sprite2D" parent="." unique_id=1189071607]
-z_index = 1
 texture_filter = 1
 position = Vector2(30, 48)
 texture = ExtResource("1_2w1yk")

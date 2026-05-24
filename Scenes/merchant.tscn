@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://2856n2quv82k"]
 
 [ext_resource type="Texture2D" uid="uid://egvhfbrevch1" path="res://Assets/Merchant/Marchant.png" id="1_5u005"]
-[ext_resource type="Script" uid="uid://bneada3dcb45x" path="res://Scripts/merchant.gd" id="1_rp4tw"]
+[ext_resource type="Script" uid="uid://w4cqkr4bjv31" path="res://Scripts/merchant.gd" id="1_rp4tw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5u005"]
-radius = 59.0
+radius = 61.012806
 
 [sub_resource type="Animation" id="Animation_5u005"]
 length = 0.001
@@ -46,32 +46,67 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rp4tw"]
-size = Vector2(46, 22)
+size = Vector2(29.5, 11)
 
-[node name="Merchant" type="Area2D" unique_id=894567308 node_paths=PackedStringArray("dialog_box")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rp4tw"]
+bg_color = Color(0.43824014, 0.18451819, 0.044547595, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.11489678, 0.11489683, 0.11489669, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s08t2"]
+bg_color = Color(0.5307749, 0.32651147, 0.16123742, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.3764706, 0.007843138, 0.25882354, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 3
+
+[node name="Merchant" type="Area2D" unique_id=894567308 node_paths=PackedStringArray("dialog_box", "botao_conversar", "botao_loja", "loja_box", "botao_sair_loja", "botao_pocao", "botao_melhoria_vida", "botao_melhoria_dano", "botao_melhoria_mana")]
+process_mode = 3
 script = ExtResource("1_rp4tw")
 dialog_box = NodePath("Control/DialogBox")
+botao_conversar = NodePath("Control/DialogBox/BotaoConversar")
+botao_loja = NodePath("Control/DialogBox/BotaoLoja")
+loja_box = NodePath("Control/LojaBox")
+botao_sair_loja = NodePath("Control/LojaBox/BotaoSairLoja")
+botao_pocao = NodePath("Control/LojaBox/BotaoPocao")
+botao_melhoria_vida = NodePath("Control/LojaBox/BotaoMelhoriaVida")
+botao_melhoria_dano = NodePath("Control/LojaBox/BotaoMelhoriaDano")
+botao_melhoria_mana = NodePath("Control/LojaBox/BotaoMelhoriaMana")
 
 [node name="InteractionRange" type="CollisionShape2D" parent="." unique_id=646949153]
-visible = false
 show_behind_parent = true
+scale = Vector2(1, 0.8)
 shape = SubResource("CircleShape2D_5u005")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1878083982]
 texture_filter = 1
-position = Vector2(0, -36)
+position = Vector2(0, -24.999998)
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_5u005")
 hframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=566811218]
+process_mode = 1
 libraries/ = SubResource("AnimationLibrary_s08t2")
 autoplay = &"idle"
 
 [node name="Body" type="StaticBody2D" parent="." unique_id=1254556173]
-visible = false
 
 [node name="BodyBlock" type="CollisionShape2D" parent="Body" unique_id=1661081214]
-position = Vector2(0, -8)
+position = Vector2(0.25, -1.5)
 shape = SubResource("RectangleShape2D_rp4tw")
 
 [node name="Control" type="Control" parent="." unique_id=1317140076]
@@ -90,7 +125,6 @@ grow_vertical = 0
 [node name="DialogBox" type="Panel" parent="Control" unique_id=751498764]
 visible = false
 z_index = 2
-y_sort_enabled = true
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 7
@@ -98,20 +132,107 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -165.0
-offset_top = -40.0
-offset_right = 144.0
-offset_bottom = 12.0
+offset_left = -163.0
+offset_top = -19.0
+offset_right = 146.0
+offset_bottom = 102.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rp4tw")
 
 [node name="dialogo" type="Label" parent="Control/DialogBox" unique_id=1321202908]
 texture_filter = 1
 layout_mode = 0
-offset_right = 295.0
+offset_left = 7.0
+offset_right = 302.0
 offset_bottom = 1167.0
 text = "Testando dialogo seu player bostinha hahahahahah!"
 autowrap_mode = 3
+
+[node name="BotaoConversar" type="Button" parent="Control/DialogBox" unique_id=1207636565]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 51.0
+offset_right = 93.0
+offset_bottom = 82.0
+text = "Conversar"
+
+[node name="BotaoLoja" type="Button" parent="Control/DialogBox" unique_id=673890047]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 84.0
+offset_right = 47.0
+offset_bottom = 115.0
+text = "Loja"
+
+[node name="LojaBox" type="Panel" parent="Control" unique_id=1759506821]
+visible = false
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.9
+anchor_top = -1.8
+anchor_right = -0.7
+anchor_bottom = -0.6
+offset_right = 160.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s08t2")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control/LojaBox" unique_id=1929887447]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 8.0
+offset_right = 168.0
+offset_bottom = 57.0
+text = "Loja do Grande 
+Mago Melby Law"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotaoSairLoja" type="Button" parent="Control/LojaBox" unique_id=1171209626]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 8.0
+offset_right = 232.0
+offset_bottom = 39.0
+scale = Vector2(0.5, 0.5)
+text = "Fechar"
+
+[node name="BotaoPocao" type="Button" parent="Control/LojaBox" unique_id=2069686632]
+visible = false
+layout_mode = 0
+offset_left = 9.0
+offset_top = 168.0
+offset_right = 200.0
+offset_bottom = 200.0
+text = "Poção de Cura    20g"
+
+[node name="BotaoMelhoriaDano" type="Button" parent="Control/LojaBox" unique_id=805399774]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 120.0
+offset_right = 176.0
+offset_bottom = 152.0
+text = "Dano++   15g"
+
+[node name="BotaoMelhoriaVida" type="Button" parent="Control/LojaBox" unique_id=1661613094]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 80.0
+offset_right = 176.0
+offset_bottom = 112.0
+text = "Vida++     12g"
+
+[node name="BotaoMelhoriaMana" type="Button" parent="Control/LojaBox" unique_id=1353251311]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 160.0
+offset_right = 176.0
+offset_bottom = 192.0
+text = "Mana++  12g"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

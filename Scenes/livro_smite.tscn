@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cva01rhbqv585"]
+
+[ext_resource type="Texture2D" uid="uid://cwtdc8uyw7356" path="res://Assets/Items/bible.png" id="1_1y3c4"]
+[ext_resource type="Script" uid="uid://csmju523m030o" path="res://Scripts/livro_smite.gd" id="1_ke537"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_idta1"]
+radius = 104.0
+
+[node name="LivroSmite" type="Area2D" unique_id=1826244280]
+script = ExtResource("1_ke537")
+
+[node name="livro" type="Sprite2D" parent="." unique_id=893167819]
+texture_filter = 1
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("1_1y3c4")
+
+[node name="zona_interacao" type="CollisionShape2D" parent="." unique_id=350692580]
+shape = SubResource("CircleShape2D_idta1")

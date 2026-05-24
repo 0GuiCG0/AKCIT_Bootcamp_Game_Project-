@@ -5,8 +5,11 @@ extends StaticBody2D # Agora é um StaticBody2D para bloqueio absoluto
 @export var attack_range: float = 50.0 
 
 @export_category("Combate")
+@export var max_hp: int = 50 # Vida máxima do ogro
+@export var xp_recompensa: int = 35 # Quanto de XP o Ogro vai dar ao morrer
+var hp: int = 50 # Vida atual do ogro
 @export var attack_damage: int = 20 
-@export var attack_cooldown: float = 1.5 
+@export var attack_cooldown: float = 1.5
 
 # --- Variáveis para a Animação Procedural de Caminhada ---
 @export var walk_anim_speed: float = 15.0 
@@ -20,6 +23,7 @@ var player: Node2D = null
 var is_chasing: bool = false
 var is_attacking: bool = false 
 var can_attack: bool = true 
+var invulneravel: bool = false # NOVO: Controle de invulnerabilidade
 
 # Lista de quem está dentro da área vermelha
 var alvos_no_ataque: Array[Node2D] = [] 
@@ -94,11 +98,36 @@ func _reset_sprite_transform(delta):
 # FUNÇÕES DE DANO
 # ==========================================
 
+func tomar_dano(quantidade: int) -> void:
+	# Se ele já está invulnerável, ignora o dano e sai da função
+	if invulneravel:
+		return
+	# Deixa o Ogro invulnerável para evitar danos duplos no mesmo frame
+	invulneravel = true 
+	
+	hp -= quantidade
+	
+	var flash_tween = create_tween()
+	sprite.modulate = Color(10, 1, 1, 1)
+	flash_tween.tween_property(sprite, "modulate", Color.WHITE, 0.15).set_trans(Tween.TRANS_SINE)
+	
+	if hp <= 0:
+		morrer()
+		
+	# Espera o tempo de invulnerabilidade (0.2 a 0.3 segundos é o padrão de Action RPGs)
+	await get_tree().create_timer(0.6).timeout
+	invulneravel = false
+
+func morrer():
+	GameManager.ganhar_xp(xp_recompensa)
+	GameManager.ganhar_gold(25) 
+	queue_free()
+
+
 func _on_attack_area_body_entered(body: Node2D) -> void:
 	if body.has_method("tomar_dano"):
 		if not alvos_no_ataque.has(body):
 			alvos_no_ataque.append(body)
-			print(body.name, " entrou na zona de perigo!") # Só pra você ter certeza que ele detectou
 
 func _on_attack_area_body_exited(body: Node2D) -> void:
 	if alvos_no_ataque.has(body):

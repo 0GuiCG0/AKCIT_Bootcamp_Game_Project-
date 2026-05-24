@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://scg2d137jcve"]
 
-[ext_resource type="Script" uid="uid://h3gp7ik8k6id" path="res://Scripts/ogre.gd" id="1_21mmg"]
+[ext_resource type="Script" uid="uid://svrhg63k5bl" path="res://Scripts/ogre.gd" id="1_21mmg"]
 [ext_resource type="Texture2D" uid="uid://bo8vwrtsbud5l" path="res://Assets/Enemies/orc_marvado_sprite-sheet-Photoroom.png" id="1_ydu6i"]
 [ext_resource type="Script" uid="uid://bq0sf0xhabowb" path="res://Scripts/fov_ogre.gd" id="2_u2ms1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xdnku"]
-size = Vector2(50, 21)
+size = Vector2(72, 29.25)
 
 [sub_resource type="Animation" id="Animation_ydu6i"]
 length = 0.001
@@ -71,22 +71,20 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4j2he"]
-radius = 40.0
+radius = 56.0
 
 [node name="Ogre" type="StaticBody2D" unique_id=999183687]
-z_index = 1
-y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_21mmg")
 speed = 90.0
 rotation_speed = 2.0
 attack_range = 52.0
+xp_recompensa = 115
+attack_damage = 12
 walk_anim_angle = 0.05
 walk_anim_bounce = 2.5
 
 [node name="Body" type="CollisionShape2D" parent="." unique_id=360791757]
-visible = false
-position = Vector2(-3, -5.5)
 shape = SubResource("RectangleShape2D_xdnku")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1677461995]
@@ -94,10 +92,9 @@ root_node = NodePath("../Sprite2D")
 libraries/ = SubResource("AnimationLibrary_u2ms1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=901819850]
-z_index = 1
 y_sort_enabled = true
 texture_filter = 1
-position = Vector2(0, -39)
+position = Vector2(0, -25)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_ydu6i")
 offset = Vector2(15, 0)
@@ -106,7 +103,6 @@ vframes = 4
 frame = 3
 
 [node name="FOV" type="Area2D" parent="." unique_id=2094441972]
-visible = false
 texture_filter = 1
 priority = 1
 script = ExtResource("2_u2ms1")
@@ -115,7 +111,7 @@ script = ExtResource("2_u2ms1")
 position = Vector2(130, 0)
 rotation = -3.1415927
 scale = Vector2(1.3, 0.9)
-polygon = PackedVector2Array(100, 0, 120, -79, 170, -67, 196, -41, 220, 0, 196, 41, 170, 67, 120, 79)
+polygon = PackedVector2Array(60, 0, 73, -31, 100, -51, 130, -35, 170, -67, 220, -40, 245.38461, -1.11108, 220, 40, 170, 67, 130, 35, 100, 51, 73, 31)
 
 [node name="AreaAttack" type="Area2D" parent="." unique_id=1768629355]
 
