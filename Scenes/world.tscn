@@ -1,40 +1,30 @@
 [gd_scene format=3 uid="uid://c1qitvj8vr6rw"]
 
-<<<<<<< Updated upstream
-[ext_resource type="PackedScene" uid="uid://cd13okvxnkr7d" path="res://Scenes/forest.tscn" id="1_8j60k"]
-[ext_resource type="PackedScene" uid="uid://b2k5ej226qitc" path="res://Scenes/player.tscn" id="2_fo5ed"]
-=======
 [ext_resource type="Script" uid="uid://cwj0t81v7emf6" path="res://Scripts/world.gd" id="1_5ukr8"]
 [ext_resource type="PackedScene" uid="uid://b2k5ej226qitc" path="res://Scenes/player.tscn" id="2_8j60k"]
 [ext_resource type="PackedScene" uid="uid://cd13okvxnkr7d" path="res://Scenes/forest.tscn" id="2_fo5ed"]
->>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://scg2d137jcve" path="res://Scenes/ogre.tscn" id="3_5ukr8"]
 [ext_resource type="PackedScene" uid="uid://2856n2quv82k" path="res://Scenes/merchant.tscn" id="4_o06y3"]
+[ext_resource type="PackedScene" uid="uid://cva01rhbqv585" path="res://Scenes/livro_smite.tscn" id="5_fo5ed"]
 
 [node name="World" type="Node2D" unique_id=858065529]
+y_sort_enabled = true
+script = ExtResource("1_5ukr8")
 
-<<<<<<< Updated upstream
-[node name="Forest" parent="." unique_id=1754007016 instance=ExtResource("1_8j60k")]
-
-[node name="Player" parent="." unique_id=755526093 instance=ExtResource("2_fo5ed")]
-position = Vector2(599, 609)
-=======
 [node name="Forest" parent="." unique_id=1754007016 instance=ExtResource("2_fo5ed")]
->>>>>>> Stashed changes
 
-[node name="Ogre" parent="." unique_id=422975577 instance=ExtResource("3_5ukr8")]
+[node name="Ogre" parent="." unique_id=422975577 groups=["limpar_na_transicao"] instance=ExtResource("3_5ukr8")]
+y_sort_enabled = true
 position = Vector2(1072, 206)
 
-[node name="Ogre2" parent="." unique_id=308551835 instance=ExtResource("3_5ukr8")]
+[node name="Ogre2" parent="." unique_id=308551835 groups=["limpar_na_transicao"] instance=ExtResource("3_5ukr8")]
+y_sort_enabled = true
 position = Vector2(200, 585)
 
-[node name="Ogre3" parent="." unique_id=577786251 instance=ExtResource("3_5ukr8")]
+[node name="Ogre3" parent="." unique_id=577786251 groups=["limpar_na_transicao"] instance=ExtResource("3_5ukr8")]
+y_sort_enabled = true
 position = Vector2(350, 126)
 
-<<<<<<< Updated upstream
-[node name="Merchant" parent="." unique_id=894567308 instance=ExtResource("4_o06y3")]
-position = Vector2(847, 555)
-=======
 [node name="Player" parent="." unique_id=755526093 instance=ExtResource("2_8j60k")]
 position = Vector2(609, 633)
 
@@ -45,4 +35,3 @@ position = Vector2(830, 610)
 y_sort_enabled = true
 position = Vector2(540, 278)
 scale = Vector2(0.4, 0.4)
->>>>>>> Stashed changes

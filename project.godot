@@ -10,11 +10,7 @@ config_version=5
 
 [application]
 
-<<<<<<< Updated upstream
-config/name="Projeto-Testes"
-=======
 config/name="AKCIT Projeto - Doomed Village"
->>>>>>> Stashed changes
 run/main_scene="uid://c1qitvj8vr6rw"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
@@ -23,13 +19,10 @@ config/icon="res://icon.svg"
 
 buses/default_bus_layout=""
 
-<<<<<<< Updated upstream
-=======
 [autoload]
 
 GameManager="*uid://dbw3xbtmogx5h"
 
->>>>>>> Stashed changes
 [display]
 
 window/size/viewport_width=1280
@@ -38,31 +31,21 @@ window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 
-<<<<<<< Updated upstream
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/ai_assistant_hub/plugin.cfg")
-
-=======
->>>>>>> Stashed changes
 [input]
 
 left={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"location":0,"echo":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194319,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 right={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"location":0,"echo":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 up={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":119,"location":0,"echo":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194320,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 down={
@@ -76,18 +59,14 @@ interact={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
 ]
 }
-atacar={
+ataque_poderoso={
 "deadzone": 0.2,
-<<<<<<< Updated upstream
-"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(142, 19),"global_position":Vector2(151, 67),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
-=======
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(328, 13),"global_position":Vector2(337, 61),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 ataque_slash={
 "deadzone": 0.2,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(168, 16),"global_position":Vector2(177, 64),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
->>>>>>> Stashed changes
 ]
 }
 
@@ -98,7 +77,7 @@ ataque_slash={
 [plugins]
 
 ai_assistant_hub/options/debug_mode=0
-ai_assistant_hub/llm_api="openrouter_api"
+ai_assistant_hub/llm_api="ollama_api"
 ai_assistant_hub/preferences/thinking_target=0
 ai_assistant_hub/preferences/skip_greeting=false
 ai_assistant_hub/preferences/always_scroll_to_bottom=false
@@ -106,5 +85,4 @@ ai_assistant_hub/preferences/audio_hints=true
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"

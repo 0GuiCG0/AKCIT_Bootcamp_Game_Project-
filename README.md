@@ -1,8 +1,1 @@
-# AKCITBootcamp - Doomed Village
-
-## Doomed Village:
-
-## Por:
-### Guilherme Caetano Gêa Martins
-### Vinicius
-### Ronan
+# AKCIT_Bootcamp_Game_Project-
