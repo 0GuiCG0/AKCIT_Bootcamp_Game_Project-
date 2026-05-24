@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://scg2d137jcve"]
 
-[ext_resource type="Script" uid="uid://h3gp7ik8k6id" path="res://Scripts/ogre.gd" id="1_21mmg"]
+[ext_resource type="Script" uid="uid://svrhg63k5bl" path="res://Scripts/ogre.gd" id="1_21mmg"]
 [ext_resource type="Texture2D" uid="uid://bo8vwrtsbud5l" path="res://Assets/Enemies/orc_marvado_sprite-sheet-Photoroom.png" id="1_ydu6i"]
 [ext_resource type="Script" uid="uid://bq0sf0xhabowb" path="res://Scripts/fov_ogre.gd" id="2_u2ms1"]
 

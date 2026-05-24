@@ -10,7 +10,11 @@ config_version=5
 
 [application]
 
+<<<<<<< Updated upstream
 config/name="Projeto-Testes"
+=======
+config/name="AKCIT Projeto - Doomed Village"
+>>>>>>> Stashed changes
 run/main_scene="uid://c1qitvj8vr6rw"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
@@ -19,19 +23,28 @@ config/icon="res://icon.svg"
 
 buses/default_bus_layout=""
 
+<<<<<<< Updated upstream
+=======
+[autoload]
+
+GameManager="*uid://dbw3xbtmogx5h"
+
+>>>>>>> Stashed changes
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/resizable=false
 window/stretch/mode="viewport"
-window/stretch/scale=1.25
 window/stretch/scale_mode="integer"
 
+<<<<<<< Updated upstream
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/ai_assistant_hub/plugin.cfg")
 
+=======
+>>>>>>> Stashed changes
 [input]
 
 left={
@@ -65,7 +78,16 @@ interact={
 }
 atacar={
 "deadzone": 0.2,
+<<<<<<< Updated upstream
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(142, 19),"global_position":Vector2(151, 67),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+=======
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(328, 13),"global_position":Vector2(337, 61),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+ataque_slash={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(168, 16),"global_position":Vector2(177, 64),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+>>>>>>> Stashed changes
 ]
 }
 

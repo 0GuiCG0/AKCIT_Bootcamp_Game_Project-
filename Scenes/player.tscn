@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://b2k5ej226qitc"]
 
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://b5jyanol2q6i8" path="res://Scripts/player.gd" id="1_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://hen63jqpvnx" path="res://Assets/Player/namelessHero.png" id="1_cvnsp"]
+=======
+[ext_resource type="Script" uid="uid://by7ipt61n8al8" path="res://Scripts/player.gd" id="1_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://nust1t5m8b8a" path="res://Assets/Player/prota1.png" id="2_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://dtb2bh6sbr5ux" path="res://Assets/VFX/slash.png" id="3_vgqql"]
+[ext_resource type="Texture2D" uid="uid://b65751kdkjqb0" path="res://Assets/VFX/holy_smite.png" id="4_fkybt"]
+>>>>>>> Stashed changes
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvnsp"]
 bg_color = Color(0.11278593, 0.0029719933, 0.00891598, 1)
@@ -46,7 +53,11 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 6
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
+<<<<<<< Updated upstream
 size = Vector2(5, 2)
+=======
+size = Vector2(20, 11)
+>>>>>>> Stashed changes
 
 [sub_resource type="Animation" id="Animation_6t5aa"]
 length = 0.001
@@ -618,6 +629,7 @@ blend_point_7/node = SubResource("AnimationNodeAnimation_f1ek2")
 blend_point_7/pos = Vector2(-0.5, -0.6)
 blend_mode = 1
 
+<<<<<<< Updated upstream
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tx1dd"]
 animation = &"runN"
 
@@ -677,6 +689,24 @@ states/Run/position = Vector2(293.26825, 112)
 states/Start/position = Vector2(-20, 112)
 transitions = ["Idle", "Run", SubResource("AnimationNodeStateMachineTransition_ukyrk"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_7dp3o"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_cvnsp")]
 graph_offset = Vector2(-237.73174, -108.408806)
+=======
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3smsa"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_cvnsp"]
+states/End/position = Vector2(742, 100)
+states/Idle/node = SubResource("AnimationNodeBlendSpace2D_x3wgy")
+states/Idle/position = Vector2(346, 100)
+states/Start/position = Vector2(217, 100)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_3smsa")]
+graph_offset = Vector2(-93.03762, -24.780735)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8erm5"]
+size = Vector2(51.42857, 62.222225)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f1ek2"]
+radius = 48.0
+>>>>>>> Stashed changes
 
 [node name="Player" type="CharacterBody2D" unique_id=755526093 groups=["player"]]
 z_index = 1
@@ -764,9 +794,31 @@ theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 12
 horizontal_alignment = 1
 vertical_alignment = 1
+<<<<<<< Updated upstream
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=477787712]
 zoom = Vector2(2.5, 2.5)
+=======
+
+[node name="gold_pouch" type="Panel" parent="HUD" unique_id=243778087]
+offset_left = 1136.0
+offset_top = 24.0
+offset_right = 1240.0
+offset_bottom = 104.0
+
+[node name="Texto" type="Label" parent="HUD/gold_pouch" unique_id=1737660844]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 88.0
+offset_bottom = 64.0
+text = " XXXX g"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=477787712]
+zoom = Vector2(1.96, 1.96)
+>>>>>>> Stashed changes
 limit_left = 0
 limit_top = 0
 limit_right = 1280
@@ -795,4 +847,51 @@ autoplay = &"idleS"
 tree_root = SubResource("AnimationNodeStateMachine_tx1dd")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(0, 0)
+<<<<<<< Updated upstream
 parameters/Run/blend_position = Vector2(0, 0)
+=======
+
+[node name="PivotAtaque" type="Node2D" parent="." unique_id=200715347]
+
+[node name="Slash" type="Node2D" parent="PivotAtaque" unique_id=2076138905]
+z_index = 2
+scale = Vector2(1.4, 0.9)
+
+[node name="SlashSprite" type="Sprite2D" parent="PivotAtaque/Slash" unique_id=1441127618]
+visible = false
+texture_filter = 1
+position = Vector2(15, 0)
+rotation = 1.5009831
+texture = ExtResource("3_vgqql")
+hframes = 5
+vframes = 2
+
+[node name="HitboxSlash" type="Area2D" parent="PivotAtaque/Slash" unique_id=2014178978]
+position = Vector2(45, 0)
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PivotAtaque/Slash/HitboxSlash" unique_id=792327113]
+position = Vector2(-8, -4)
+shape = SubResource("RectangleShape2D_8erm5")
+debug_color = Color(0.709439, 0, 0.11426351, 0.41960785)
+
+[node name="Smite" type="Node2D" parent="PivotAtaque" unique_id=703356448]
+z_index = 2
+
+[node name="HolySmite" type="Sprite2D" parent="PivotAtaque/Smite" unique_id=193056035]
+visible = false
+texture_filter = 1
+position = Vector2(0, -40)
+texture = ExtResource("4_fkybt")
+hframes = 5
+vframes = 3
+
+[node name="HitboxSmite" type="Area2D" parent="PivotAtaque/Smite" unique_id=1188393204]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PivotAtaque/Smite/HitboxSmite" unique_id=1475725342]
+shape = SubResource("CircleShape2D_f1ek2")
+debug_color = Color(0.66067845, 0.5133743, 0.09425021, 0.41960785)
+
+[connection signal="body_entered" from="PivotAtaque/Slash/HitboxSlash" to="." method="_on_hitbox_slash_body_entered"]
+[connection signal="body_entered" from="PivotAtaque/Smite/HitboxSmite" to="." method="_on_hitbox_smite_body_entered"]
+>>>>>>> Stashed changes

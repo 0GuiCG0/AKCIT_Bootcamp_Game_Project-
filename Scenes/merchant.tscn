@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://2856n2quv82k"]
 
 [ext_resource type="Texture2D" uid="uid://egvhfbrevch1" path="res://Assets/Merchant/Marchant.png" id="1_5u005"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://bneada3dcb45x" path="res://Scripts/merchant.gd" id="1_rp4tw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5u005"]
 radius = 59.0
+=======
+[ext_resource type="Script" uid="uid://w4cqkr4bjv31" path="res://Scripts/merchant.gd" id="1_rp4tw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5u005"]
+radius = 61.012806
+>>>>>>> Stashed changes
 
 [sub_resource type="Animation" id="Animation_5u005"]
 length = 0.001
@@ -46,9 +53,41 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rp4tw"]
+<<<<<<< Updated upstream
 size = Vector2(46, 22)
 
 [node name="Merchant" type="Area2D" unique_id=894567308 node_paths=PackedStringArray("dialog_box")]
+=======
+size = Vector2(29.5, 11)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rp4tw"]
+bg_color = Color(0.43824014, 0.18451819, 0.044547595, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.11489678, 0.11489683, 0.11489669, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s08t2"]
+bg_color = Color(0.5307749, 0.32651147, 0.16123742, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.3764706, 0.007843138, 0.25882354, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 3
+
+[node name="Merchant" type="Area2D" unique_id=894567308 node_paths=PackedStringArray("dialog_box", "botao_conversar", "botao_loja", "loja_box", "botao_sair_loja", "botao_pocao", "botao_melhoria_vida", "botao_melhoria_dano", "botao_melhoria_mana")]
+process_mode = 3
+>>>>>>> Stashed changes
 script = ExtResource("1_rp4tw")
 dialog_box = NodePath("Control/DialogBox")
 
@@ -59,7 +98,12 @@ shape = SubResource("CircleShape2D_5u005")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1878083982]
 texture_filter = 1
+<<<<<<< Updated upstream
 position = Vector2(0, -36)
+=======
+position = Vector2(0, -24.999998)
+scale = Vector2(0.7, 0.7)
+>>>>>>> Stashed changes
 texture = ExtResource("1_5u005")
 hframes = 4
 
@@ -68,10 +112,16 @@ libraries/ = SubResource("AnimationLibrary_s08t2")
 autoplay = &"idle"
 
 [node name="Body" type="StaticBody2D" parent="." unique_id=1254556173]
+<<<<<<< Updated upstream
 visible = false
 
 [node name="BodyBlock" type="CollisionShape2D" parent="Body" unique_id=1661081214]
 position = Vector2(0, -8)
+=======
+
+[node name="BodyBlock" type="CollisionShape2D" parent="Body" unique_id=1661081214]
+position = Vector2(0.25, -1.5)
+>>>>>>> Stashed changes
 shape = SubResource("RectangleShape2D_rp4tw")
 
 [node name="Control" type="Control" parent="." unique_id=1317140076]
