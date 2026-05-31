@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://egvhfbrevch1" path="res://Assets/Merchant/Marchant.png" id="1_5u005"]
 [ext_resource type="Script" uid="uid://w4cqkr4bjv31" path="res://Scripts/merchant.gd" id="1_rp4tw"]
+[ext_resource type="Texture2D" uid="uid://cedqlj5ln6qv1" path="res://Assets/VFX/panel-with-background.png" id="3_s08t2"]
+[ext_resource type="Texture2D" uid="uid://cyawowtajuasq" path="res://Assets/VFX/close-icon.png" id="4_ol7ip"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5u005"]
 radius = 61.012806
@@ -60,18 +62,16 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s08t2"]
-bg_color = Color(0.5307749, 0.32651147, 0.16123742, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.3764706, 0.007843138, 0.25882354, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-corner_detail = 3
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_82brx"]
+texture = ExtResource("3_s08t2")
+expand_margin_top = 32.0
+region_rect = Rect2(8, 6, 144, 171)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k41ok"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ol7ip"]
+bg_color = Color(0.5568628, 0.19215687, 0.6, 0)
 
 [node name="Merchant" type="Area2D" unique_id=894567308 node_paths=PackedStringArray("dialog_box", "botao_conversar", "botao_loja", "loja_box", "botao_sair_loja", "botao_pocao", "botao_melhoria_vida", "botao_melhoria_dano", "botao_melhoria_mana")]
 process_mode = 3
@@ -149,6 +149,18 @@ offset_bottom = 1167.0
 text = "Testando dialogo seu player bostinha hahahahahah!"
 autowrap_mode = 3
 
+[node name="hint" type="Label" parent="Control/DialogBox" unique_id=762459628]
+texture_filter = 1
+layout_mode = 0
+offset_left = 212.00002
+offset_top = 106.00001
+offset_right = 507.0
+offset_bottom = 1273.0
+scale = Vector2(0.45, 0.45)
+theme_override_colors/font_color = Color(1, 1, 1, 0.5568628)
+text = "Pressione E para fechar"
+autowrap_mode = 3
+
 [node name="BotaoConversar" type="Button" parent="Control/DialogBox" unique_id=1207636565]
 layout_mode = 0
 offset_left = 6.0
@@ -168,6 +180,7 @@ text = "Loja"
 [node name="LojaBox" type="Panel" parent="Control" unique_id=1759506821]
 visible = false
 z_index = 2
+texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -1.9
@@ -178,7 +191,7 @@ offset_right = 160.0
 offset_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_s08t2")
+theme_override_styles/panel = SubResource("StyleBoxTexture_82brx")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Control/LojaBox" unique_id=1929887447]
@@ -193,13 +206,19 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BotaoSairLoja" type="Button" parent="Control/LojaBox" unique_id=1171209626]
+texture_filter = 1
 layout_mode = 0
-offset_left = 168.0
-offset_top = 8.0
-offset_right = 232.0
-offset_bottom = 39.0
+offset_left = 159.0
+offset_top = -2.0
+offset_right = 223.0
+offset_bottom = 62.0
 scale = Vector2(0.5, 0.5)
-text = "Fechar"
+theme_override_styles/normal = SubResource("StyleBoxFlat_k41ok")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ol7ip")
+action_mode = 0
+icon = ExtResource("4_ol7ip")
+flat = true
+autowrap_trim_flags = 0
 
 [node name="BotaoPocao" type="Button" parent="Control/LojaBox" unique_id=2069686632]
 visible = false

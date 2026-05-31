@@ -1001,9 +1001,10 @@ size = Vector2(20, 133)
 size = Vector2(20, 134)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82d7c"]
-size = Vector2(1216, 587)
+size = Vector2(425, 71.25)
 
 [node name="RaidingVillage" type="Node2D" unique_id=759554886]
+y_sort_enabled = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=977769871]
 z_index = -1
@@ -1164,17 +1165,23 @@ shape = SubResource("RectangleShape2D_oeofd")
 
 [node name="Dragon" parent="." unique_id=1916711295 instance=ExtResource("9_oeofd")]
 y_sort_enabled = true
-position = Vector2(864.99994, 329)
+position = Vector2(899.99994, 442)
 scale = Vector2(0.55, 0.55)
+velocidade = 140.0
+dist_minima = 100.0
+velocidade_batimento = 7.0
+intensidade_flutuar = 8.0
+velocidade_respiro = 4.5
 
-[node name="BossTrigger" type="Area2D" parent="." unique_id=1608370749]
+[node name="TriggerBoss" type="Area2D" parent="." unique_id=1608370749 node_paths=PackedStringArray("boss")]
 script = ExtResource("10_oeofd")
-boss_node = NodePath("../Dragon")
+boss = NodePath("../Dragon")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BossTrigger" unique_id=27949294]
-visible = false
-position = Vector2(662, 422)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerBoss" unique_id=27949294]
+position = Vector2(325, 149)
 shape = SubResource("RectangleShape2D_82d7c")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=483106969]
 position = Vector2(308, 71)
+
+[connection signal="body_entered" from="TriggerBoss" to="TriggerBoss" method="_on_body_entered"]

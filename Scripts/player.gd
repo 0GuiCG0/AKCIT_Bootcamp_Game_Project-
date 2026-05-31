@@ -55,8 +55,9 @@ var move_direction: Vector2 = Vector2.ZERO
 @onready var sprite: Sprite2D = $Player 
 
 # --- Referências da UI ---
-@onready var hud_hp: ProgressBar = $HUD/hp
-@onready var hud_mana: ProgressBar = $HUD/holy_mana
+# --- Referências da UI ---
+@onready var hud_hp: TextureProgressBar = $HUD/hp
+@onready var hud_mana: TextureProgressBar = $HUD/holy_mana
 @onready var hud_xp: ProgressBar = $HUD/xp
 
 # --- Referências dos Textos ---

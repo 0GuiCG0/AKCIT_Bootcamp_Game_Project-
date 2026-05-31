@@ -4,29 +4,60 @@
 [ext_resource type="Texture2D" uid="uid://c57nv5b50bav6" path="res://Assets/Enemies/doom_dragon.png" id="2_mtyor"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtyor"]
-radius = 138.13301
+radius = 75.973175
+
+[sub_resource type="Animation" id="Animation_mtyor"]
+resource_name = "atk_fire_breath"
+
+[sub_resource type="Animation" id="Animation_d8ryr"]
+resource_name = "atk_lazer"
+
+[sub_resource type="Animation" id="Animation_gfnx5"]
+resource_name = "atk_slam"
+
+[sub_resource type="Animation" id="Animation_5gcdv"]
+resource_name = "atk_slice_dash"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7blnk"]
+_data = {
+&"atk_fire_breath": SubResource("Animation_mtyor"),
+&"atk_lazer": SubResource("Animation_d8ryr"),
+&"atk_slam": SubResource("Animation_gfnx5"),
+&"atk_slice_dash": SubResource("Animation_5gcdv")
+}
 
 [node name="Dragon" type="CharacterBody2D" unique_id=1311409626]
 script = ExtResource("1_mtyor")
+tamanho_zona = Vector2(220, 120)
+velocidade_patrulha = 100.0
+tempo_na_aresta = 5.5
+velocidade_respiro = 3.0
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=281658757]
 visible = false
+position = Vector2(4, 118.000015)
 scale = Vector2(1, 0.66)
 shape = SubResource("CircleShape2D_mtyor")
+disabled = true
 
 [node name="dragon_sprite" type="Sprite2D" parent="." unique_id=1913885972]
 texture_filter = 1
-position = Vector2(0, -167.75)
+position = Vector2(0, 52.999996)
 scale = Vector2(1, 1.087537)
 texture = ExtResource("2_mtyor")
 hframes = 3
 vframes = 2
-frame = 4
+frame = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1173837311]
+libraries/ = SubResource("AnimationLibrary_7blnk")
 
 [node name="PivotAtaque" type="Node2D" parent="." unique_id=619594681]
 visible = false
 
 [node name="Slicing_Dash" type="Node2D" parent="PivotAtaque" unique_id=351563668]
+
+[node name="dash" type="Sprite2D" parent="PivotAtaque/Slicing_Dash" unique_id=900501085]
 
 [node name="Hitbox" type="Area2D" parent="PivotAtaque/Slicing_Dash" unique_id=2097461829]
 
@@ -34,18 +65,24 @@ visible = false
 
 [node name="Fire_Breath" type="Node2D" parent="PivotAtaque" unique_id=2092446748]
 
+[node name="fire" type="Sprite2D" parent="PivotAtaque/Fire_Breath" unique_id=2066002756]
+
 [node name="Hitbox" type="Area2D" parent="PivotAtaque/Fire_Breath" unique_id=746031963]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PivotAtaque/Fire_Breath/Hitbox" unique_id=1217358424]
 
 [node name="Ground_Slam" type="Node2D" parent="PivotAtaque" unique_id=1381958246]
 
+[node name="slam" type="Sprite2D" parent="PivotAtaque/Ground_Slam" unique_id=1958092431]
+
 [node name="Hitbox" type="Area2D" parent="PivotAtaque/Ground_Slam" unique_id=817007204]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PivotAtaque/Ground_Slam/Hitbox" unique_id=291618425]
 
-[node name="Shadow_Lazer" type="Node2D" parent="PivotAtaque" unique_id=502790918]
+[node name="Laser" type="Node2D" parent="PivotAtaque" unique_id=502790918]
 
-[node name="Hitbox" type="Area2D" parent="PivotAtaque/Shadow_Lazer" unique_id=1437685557]
+[node name="laser" type="Sprite2D" parent="PivotAtaque/Laser" unique_id=1268415369]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PivotAtaque/Shadow_Lazer/Hitbox" unique_id=1010382034]
+[node name="Hitbox" type="Area2D" parent="PivotAtaque/Laser" unique_id=1437685557]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PivotAtaque/Laser/Hitbox" unique_id=1010382034]
